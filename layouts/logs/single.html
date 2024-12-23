@@ -1,0 +1,65 @@
+{{ define "main" }}
+<article class="log-single">
+    <!-- Timestamp Header -->
+    <div class="timestamp-header">
+        <div class="container">
+            <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format "181530-1218-128 2300 UTC" }}
+            </time>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="quantum-text">{{ .Title }}</h1>
+            <div class="log-meta">
+                <span class="location">{{ .Params.location }}</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <!-- Command Header -->
+            <div class="command-header">
+                <h2>[{{ .Date.Format "2006-01-02 1504 UTC" }}] PATTERN ANALYSIS BREAKTHROUGH</h2>
+                <div class="command-meta">
+                    Commander's Log: {{ .Params.commander }} Location: {{ .Params.location }}
+                </div>
+            </div>
+
+            <!-- Log Content -->
+            <div class="log-content prose">
+                {{ .Content }}
+            </div>
+
+            <!-- Image Gallery -->
+            {{ with .Params.images }}
+            <div class="image-gallery">
+                {{ range . }}
+                <figure class="analysis-image">
+                    <img src="/images/{{ . }}" alt="Analysis visualization" loading="lazy">
+                </figure>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            <footer class="log-footer">
+                <div class="quantum-state-display">
+                    QS: {{ .Params.quantum_state }}
+                </div>
+
+                <nav class="log-navigation">
+                    {{ with .PrevInSection }}
+                    <a href="{{ .RelPermalink }}" class="prev-log">← Previous Log</a>
+                    {{ end }}
+                    {{ with .NextInSection }}
+                    <a href="{{ .RelPermalink }}" class="next-log">Next Log →</a>
+                    {{ end }}
+                </nav>
+            </footer>
+        </div>
+    </section>
+</article>
+{{ end }}

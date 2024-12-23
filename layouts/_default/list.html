@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container">
+    <div class="posts-feed">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="post-preview">
+            <div class="post-content">
+                <h2 class="post-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+                <p class="post-excerpt">{{ .Description }}</p>
+                <p class="post-date">
+                    {{ .Date.Format "02 Jan 2006" }} -
+                    {{ if eq .Params.status "ongoing" }}
+                    <span class="status-ongoing">Ongoing</span>
+                    {{ else if eq .Params.status "complete" }}
+                    <span class="status-complete">Complete</span>
+                    {{ else }}
+                    <span class="status-unknown">Status Unknown</span>
+                    {{ end }}
+                </p>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

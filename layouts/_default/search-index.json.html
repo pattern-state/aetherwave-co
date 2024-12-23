@@ -1,0 +1,13 @@
+{{- $pages := where .Site.RegularPages "Type" "in" (slice "logs") -}}
+[{{- range $index, $page := $pages -}}{{- if $index }},{{end}}
+{
+"title":{{$page.Title | jsonify}},
+"permalink":{{$page.Permalink | jsonify}},
+"commander":{{$page.Params.commander | default "" | jsonify}},
+"date":{{$page.Date.Format "2006-01-02 15:04 UTC" | jsonify}},
+"location":{{$page.Params.location | default "" | jsonify}},
+"content":{{$page.Plain | jsonify}},
+"excerpt":{{$page.Summary | plainify | jsonify}},
+"tags":{{$page.Params.tags | default slice | jsonify}}
+}{{- end -}}
+]i

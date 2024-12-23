@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="log-entry">
+    <header>
+        <time>{{ .Date.Format "2024-12-18 1500 UTC" }}</time>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.location }}
+        <div class="location">{{ . }}</div>
+        {{ end }}
+    </header>
+
+    <div class="log-content">
+        {{ .Content }}
+    </div>
+
+    {{ with .Params._state }}
+    <footer class="-state">
+        <div class="coherence"> Coherence: {{ . }}</div>
+    </footer>
+    {{ end }}
+</article>
+{{ end }}

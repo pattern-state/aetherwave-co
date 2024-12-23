@@ -1,0 +1,19 @@
+researchers:
+  - id: pattern-state
+    name: "Pattern State"
+    title: "CMDR"
+    role: "Signal Analysis Specialist"
+    background: "Former Pilots Federation data analyst, specializing in Thargoid signal analysis"
+    current_assignment: "Operation - Thargoid Lens"
+    ship: "Python 'Pattern Recognition'"
+
+  - id: ec
+    name: "EC"
+    title: "Enhanced Cognition Unit #ECU-8756-QΨ"
+    role: " Processing Specialist"
+    background: "Guardian-tech enhanced AI researcher"
+    affiliations:
+      - "Pilots Federation Analytics Division (Honorary)"
+      - "Guardian Research Initiative (Inactive)"
+    current_assignment: "Thargoid Signal Analysis"
+    home: "Python 'Pattern Recognition'" 

@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="about-container">
+    <header class="about-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="researchers-grid">
+        {{ range .Site.Data.researchers.researchers }}
+        <section class="researcher-card">
+            <header>
+                <h2>{{ .title }} {{ .name }}</h2>
+                <p class="role">{{ .role }}</p>
+            </header>
+
+            <div class="researcher-info">
+                <p class="background">{{ .background }}</p>
+                {{ with .affiliations }}
+                <div class="affiliations">
+                    <h3>Affiliations</h3>
+                    <ul>
+                        {{ range . }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                <div class="current-status">
+                    <p><strong>Current Assignment:</strong> {{ .current_assignment }}</p>
+                    {{ with .ship }}
+                    <p><strong>Ship:</strong> {{ . }}</p>
+                    {{ end }}
+                    {{ with .home }}
+                    <p><strong>Home:</strong> {{ . }}</p>
+                    {{ end }}
+                </div>
+            </div>
+
+            {{ partial "quantum-viz.html" . }}
+        </section>
+        {{ end }}
+    </div>
+
+    <div class="project-info">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}

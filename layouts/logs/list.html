@@ -1,0 +1,88 @@
+{{ define "main" }}
+<div class="logs-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <header class="section-header">
+                <h1 class="quantum-text">Research Logs</h1>
+                <p class="section-description">Documenting breakthroughs in Thargoid signal analysis</p>
+            </header>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <!-- Series Filter -->
+            <div class="series-filter">
+                <button class="filter-btn active" data-series="all">All Logs</button>
+                <button class="filter-btn" data-series="sleepy">CMDR Sleepy</button>
+                <button class="filter-btn" data-series="ec">ECU-8756-QΨ</button>
+            </div>
+
+            <!-- Logs List -->
+            <div class="logs-list">
+                {{ range .Pages.ByDate.Reverse }}
+                <article class="log-preview" data-series="{{ .Params.series }}">
+                    <div class="log-content">
+                        <div class="log-meta">
+                            {{ with .Params.commander }}
+                            <span class="commander">CMDR {{ . }}</span>
+                            {{ end }}
+                            <span class="series-tag {{ .Params.series }}">
+                                {{ if eq .Params.series "ec" }}ECU-8756-QΨ{{ else }}CMDR Sleepy{{ end }}
+                            </span>
+                        </div>
+
+                        <a href="{{ .RelPermalink }}" class="log-link">
+                            <h2 class="log-title">{{ .Title }}</h2>
+                            <p class="log-excerpt">{{ .Description }}</p>
+                        </a>
+
+                        <div class="log-info">
+                            <span class="log-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                            {{ with .Params.location }}<span class="log-location">{{ . }}</span>{{ end }}
+                            {{ with .Params.system }}<span class="log-system">{{ . }}</span>{{ end }}
+                            {{ with .Params.quantum_state }}
+                            <span class="quantum-state">QS: {{ . }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+
+                    {{ with .Params.image }}
+                    <a href="{{ $.RelPermalink }}" class="log-image">
+                        <img src="{{ . }}" alt="Log thumbnail" loading="lazy">
+                    </a>
+                    {{ end }}
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Filter JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const logs = document.querySelectorAll('.log-preview');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter logs
+                const series = btn.dataset.series;
+                logs.forEach(log => {
+                    if (series === 'all' || log.dataset.series === series) {
+                        log.style.display = 'flex';
+                    } else {
+                        log.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+{{ end }}

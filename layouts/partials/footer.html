@@ -1,0 +1,43 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Main footer content -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aetherwave Research</h3>
+                <p>Decoding Thargoid communications through signal analysis and pattern recognition.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Research Series</h3>
+                <ul>
+                    <li><a href="/logs/sleepy">CMDR Sleepy</a></li>
+                    <li><a href="/logs/ec">ECU-8756-QΨ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://www.edsm.net/">EDSM</a></li>
+                    <li><a href="https://inara.cz/">INARA</a></li>
+                    <li><a href="/data-visualisation">Visualisations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Commander Info</h3>
+                <p>CMDR Sleepy</p>
+                <p>Current System: {{ .Site.Params.currentSystem | default "Undisclosed" }}</p>
+            </div>
+        </div>
+
+        <!-- Bottom footer -->
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="https://github.com/yourusername/aetherwave-research">GitHub</a>
+            </div>
+            <div class="copyright">© {{ now.Format "2006" }} Aetherwave Research. All rights reserved.</div>
+        </div>
+    </div>
+</footer>

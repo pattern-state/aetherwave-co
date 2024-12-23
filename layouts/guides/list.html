@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container guides-container">
+    <header class="section-header">
+        <h1 class="quantum-text">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="section-description">{{ . }}</p>
+        {{ end }}
+        <div class="status-line">
+            <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+            {{ if .Params.status }}
+            - <span class="status-{{ .Params.status }}">{{ .Params.status }}</span>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="guides-list">
+        {{ range .Pages.ByWeight }}
+        <article class="guide-card">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="guide-description">{{ .Description }}</p>
+            <div class="guide-meta">
+                <span class="category">{{ .Params.category }}</span>
+                <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

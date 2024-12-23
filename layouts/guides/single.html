@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="guide-content">
+    <header class="guide-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="guide-description">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="guide-body">
+        {{ .Content }}
+    </div>
+
+    <footer class="guide-footer">
+        <div class="guide-meta">
+            <p>Last updated: {{ .Date.Format "January 2, 2006" }}</p>
+            {{ with .Params.category }}
+            <p>Category: {{ . }}</p>
+            {{ end }}
+        </div>
+    </footer>
+</article>
+{{ end }}

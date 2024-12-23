@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <header class="section-header">
+                <h1 class="quantum-text">{{ .Site.Title }}</h1>
+                {{ with .Site.Params.description }}
+                <p class="section-description">{{ . }}</p>
+                {{ end }}
+            </header>
+        </div>
+    </section>
+
+    <!-- Featured Research -->
+    <section class="featured-content">
+        <div class="container">
+            <div class="recent-logs">
+                <h2>Latest Research</h2>
+                {{ $logs := where .Site.RegularPages "Section" "logs" }}
+                {{ range first 1 $logs.ByDate.Reverse }}
+                <article class="featured-log">
+                    <div class="log-meta">
+                        <span class="commander">{{ .Params.commander }}</span>
+                        <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+                        {{ with .Params.location }}
+                        <span class="location">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p class="summary">{{ .Summary }}</p>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid -->
+    <section class="content-grid">
+        <div class="container">
+            <div class="grid-layout">
+                <!-- Recent Logs -->
+                <div class="main-content">
+                    {{ $logs := where .Site.RegularPages "Section" "logs" }}
+                    {{ range after 1 (first 5 $logs.ByDate.Reverse) }}
+                    <article class="log-entry">
+                        <div class="log-meta">
+                            <span class="commander">{{ .Params.commander }}</span>
+                            <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+                        </div>
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <p class="summary">{{ .Summary }}</p>
+                    </article>
+                    {{ end }}
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Data Visualizations -->
+                    <div class="viz-section">
+                        <h4>Latest Visualizations</h4>
+                        {{ $viz := where .Site.RegularPages "Section" "data-visualisation" }}
+                        {{ range first 2 $viz.ByDate.Reverse }}
+                        <article class="viz-entry">
+                            <h5><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+                        </article>
+                        {{ end }}
+                    </div>
+
+                    <!-- Research Guides -->
+                    <div class="guides-section">
+                        <h4>Research Guides</h4>
+                        {{ $guides := where .Site.RegularPages "Section" "guides" }}
+                        {{ range first 3 $guides.ByWeight }}
+                        <article class="guide-entry">
+                            <h5><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
+                            {{ with .Params.category }}
+                            <span class="category">{{ . }}</span>
+                            {{ end }}
+                        </article>
+                        {{ end }}
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>
+
+{{ partial "quantum-viz.html" . }}
+{{ end }}
