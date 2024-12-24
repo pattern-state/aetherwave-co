@@ -1,4 +1,4 @@
-baseURL = "https://aetherwave.co"
+baseURL = "https://cmdr-sleepy.github.io/aetherwave-co"
 languageCode = "en-us"
 title = "AetherWave Research Portal"
 
@@ -54,3 +54,7 @@ title = "AetherWave Research Portal"
 
 [build.processing]
   css = true
+  js = true
+  
+[security.funcs]
+  getenv = ['^HUGO_']
