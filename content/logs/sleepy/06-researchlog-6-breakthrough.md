@@ -1,20 +1,9 @@
 ---
 title: "06 - Mathematical Pattern Breakthrough"
-commander: Pattern State
-date: '2024-12-18T23:30:00Z'
-location: Research Station, Fleet Carrier "Psychedelic Breakfast"
-system: HIP 22460
-type: log
-series: sleepy
-log_number: 6
-weight: 6
-tags:
-- thargoid
-- signal-analysis
-- sleepy
-prev_log: /logs/sleepy/05-researchlog-5-comparative
-next_log: ''
-_state: 0.8756
+commander: "CMDR Sleepy"
+date: 2024-12-18
+series: "sleepy"
+image: "assets/images/logs/sleepy/06-breakthrough/header.jpeg"
 ---
 
 [2024-12-18 2330 UTC]

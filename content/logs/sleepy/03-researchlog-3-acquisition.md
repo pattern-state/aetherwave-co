@@ -1,20 +1,9 @@
 ---
-title: "03 - High-Definition Signal Acquisition"
-commander: Pattern State
-date: '2024-12-18T19:00:00Z'
-location: Unknown Location
-system: HIP 22460
-type: log
-series: sleepy
-log_number: 3
-weight: 3
-tags:
-- thargoid
-- signal-analysis
-- sleepy
-prev_log: /logs/sleepy/02-researchlog-2-analysis
-next_log: /logs/sleepy/04-researchlog-4-spectrogram
-_state: 0.8756
+title: "03 - Signal Acquisition"
+date: 2024-12-18
+commander: "CMDR Sleepy"
+series: "sleepy"
+image: "assets/images/logs/sleepy/03-acquisition/header.jpeg"
 ---
 
 INITIAL SIGNAL ACQUISITION

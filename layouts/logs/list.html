@@ -50,7 +50,10 @@
 
                     {{ with .Params.image }}
                     <a href="{{ $.RelPermalink }}" class="log-image">
-                        <img src="{{ . }}" alt="Log thumbnail" loading="lazy">
+                        {{ $image := resources.Get . }}
+                        {{ if $image }}
+                        <img src="{{ $image.RelPermalink }}" alt="Log thumbnail" loading="lazy">
+                        {{ end }}
                     </a>
                     {{ end }}
                 </article>

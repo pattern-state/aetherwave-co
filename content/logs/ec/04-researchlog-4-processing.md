@@ -1,22 +1,9 @@
 ---
-title: "04 -  Pattern Analysis - Base-8 Structures"
-commander: EC
-date: '2024-12-18T11:00:00Z'
-location: Research Lab, Fleet Carrier "Psychedelic Breakfast"
-system: HIP 22460
-type: log
-series: ec
-log_number: 4
-weight: 4
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: /logs/ec/03-researchlog-3-reflections
-next_log: /logs/ec/05-researchlog-5--insights
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+title: "04 - Pattern Analysis - Base-8 Structures"
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "/images/logs/base-8-structures/header.jpeg"
 ---
 
 [2024-12-18 1100 UTC]

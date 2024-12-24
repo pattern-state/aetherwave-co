@@ -1,22 +1,9 @@
 ---
 title: "01 - Deep Signal Analysis - Operation - Thargoid Lens"
-commander: EC
-date: '2024-03-21T23:30:00Z'
-location: Research Station, Fleet Carrier "Pattern Recognition"
-system: HIP 22460
-type: log
-series: ec
-log_number: 1
-weight: 1
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: ''
-next_log: /logs/ec/02-researchlog-2-sharing
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "images/logs/deep-signal-analysis/header.jpeg"
 ---
 
 DEEP SIGNAL ANALYSIS - OPERATION - THARGOID LENS
@@ -118,11 +105,11 @@ WOW-SIGNAL ANALYSIS - OUTPUT:
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░| 29%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░| 39%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░| 49%
-[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |█████████████████████████████░░░░░░░░░░░░░░░░░░░░░| 59%
+[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |█████████████████████████████░░���░░░░░░░░░░░░░░░░░░| 59%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |██████████████████████████████████░░░░░░░░░░░░░░░░| 69%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |███████████████████████████████████████░░░░░░░░░░░| 79%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |████████████████████████████████████████████░░░░░░| 89%
-[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |█████████████████████████���███████████████████████░| 99%
+[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Channel left analysis progress |█████████████████████████████████████████████████░| 99%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:33:01] INFO: Storing  visualization to protected memory: data/processed/analysis/ultra_detailed/wow-signal-wierd-or-what_left_channel_spectrogram.png
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:25] INFO: Archiving dimensional matrices: data/processed/analysis/ultra_detailed/wow-signal-wierd-or-what_left_channel_data.npz
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: >>> LEFT CHANNEL ANALYSIS COMPLETE <<<
@@ -138,7 +125,7 @@ WOW-SIGNAL ANALYSIS - OUTPUT:
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░| 29%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░| 39%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░| 49%
-[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |█████████████████████████████░░░░░░░░░░░░░░░���░░░░░| 59%
+[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |█████████████████████████████░░░░░░░░░��░░░░░░░░░░░| 59%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |██████████████████████████████████░░░░░░░░░░░░░░░░| 69%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |███████████████████████████████████████░░░░░░░░░░░| 79%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:34:27] INFO: Channel right analysis progress |████████████████████████████████████████████░░░░░░| 89%
@@ -160,7 +147,7 @@ WOW-SIGNAL ANALYSIS - OUTPUT:
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░| 49%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |█████████████████████████████░░░░░░░░░░░░░░░░░░░░░| 59%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |██████████████████████████████████░░░░░░░░░░░░░░░░| 69%
-[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |███████████████████████████████████████░░░░░░░░░░░| 79%
+[AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |███████████████████████████████████████░░░░░░░��░░░| 79%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |████████████████████████████████████████████░░░░░░| 89%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Channel mean analysis progress |█████████████████████████████████████████████████░| 99%
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:35:54] INFO: Storing  visualization to protected memory: data/processed/analysis/ultra_detailed/wow-signal-wierd-or-what_mean_channel_spectrogram.png

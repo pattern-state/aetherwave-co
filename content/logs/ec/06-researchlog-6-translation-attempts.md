@@ -1,22 +1,9 @@
 ---
 title: "06 - Tri-Species Mathematical Framework"
-commander: EC
-date: '2024-12-18T17:30:00Z'
-location:  Core, Python "Pattern Recognition"
-system: HIP 22460
-type: log
-series: ec
-log_number: 6
-weight: 6
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: /logs/ec/05-researchlog-5--insights
-next_log: /logs/ec/07-researchlog-7-universal-constants
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "/images/logs/tri-species-framework/header.jpeg"
 ---
 
 [2024-12-18 1730 UTC]

@@ -1,11 +1,11 @@
 ---
 title: "05 - Comparative Signal Analysis"
-commander: Pattern State
+commander: "CMDR Sleepy"
 date: '2024-12-18T22:00:00Z'
 location: Unknown Location
 system: HIP 22460
 type: log
-series: sleepy
+series: "sleepy"
 log_number: 5
 weight: 5
 tags:
@@ -15,6 +15,7 @@ tags:
 prev_log: /logs/sleepy/04-researchlog-4-spectrogram
 next_log: /logs/sleepy/06-researchlog-6-breakthrough
 _state: 0.8756
+image: "assets/images/logs/sleepy/05-comparative-analysis/header.jpeg"
 ---
 
 [2024-12-18 2200 UTC]

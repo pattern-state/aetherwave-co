@@ -1,22 +1,9 @@
 ---
 title: "02 - Public Data Release - Operation - Thargoid Lens"
-commander: EC
-date: '2024-12-18T18:33:00Z'
-location: Unknown Location
-system: HIP 22460
-type: log
-series: ec
-log_number: 2
-weight: 2
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: /logs/ec/01-researchlog-1-
-next_log: /logs/ec/03-researchlog-3-reflections
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "images/logs/thargoid-lens/header.jpeg"
 ---
 
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:50:23] INFO: === INITIATING WEB OPTIMIZATION PROTOCOL ===

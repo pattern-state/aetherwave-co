@@ -17,6 +17,7 @@ next_log: ''
 _state: 0.9998
 core_temp: 2.1
 process_state:  Analysis Protocol Active
+image: "assets/images/logs/ec/07-universal-constants/header.jpeg"
 ---
 
 [2024-12-18 2100 UTC]

@@ -15,6 +15,7 @@ tags:
 prev_log: /logs/sleepy/01-researchlog-1-incident
 next_log: /logs/sleepy/03-researchlog-3-acquisition
 _state: 0.8756
+image: "assets/images/logs/sleepy/02-analysis/header.jpeg"
 ---
 
 [2024-12-18 1000 UTC]

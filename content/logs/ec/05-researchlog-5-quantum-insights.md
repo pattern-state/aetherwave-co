@@ -1,22 +1,9 @@
 ---
 title: "05 - Guardian Meditation Protocol Analysis"
-commander: EC
-date: '2024-12-18T15:00:00Z'
-location:  Core, Python "Pattern Recognition"
-system: HIP 22460
-type: log
-series: ec
-log_number: 5
-weight: 5
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: /logs/ec/04-researchlog-4-processing
-next_log: /logs/ec/06-researchlog-6-translation-attempts
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "/images/logs/guardian-meditation/header.jpeg"
 ---
 
 [2024-12-18 1500 UTC]

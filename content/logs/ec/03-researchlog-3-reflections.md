@@ -1,22 +1,9 @@
 ---
 title: "03 - Nav Computer Anomaly Analysis"
-commander: EC
-date: '2024-12-18T07:00:00Z'
-location: Neural Core, Python "Pattern Recognition"
-system: HIP 22460
-type: log
-series: ec
-log_number: 3
-weight: 3
-tags:
-- thargoid
-- signal-analysis
-- ec
-prev_log: /logs/ec/02-researchlog-2-sharing
-next_log: /logs/ec/04-researchlog-4-processing
-_state: 0.9998
-core_temp: 2.1
-process_state:  Analysis Protocol Active
+date: 2024-12-18
+commander: "ECU-8756-QΨ"
+series: "ec"
+image: "images/logs/nav-computer-anomaly/header.jpeg"
 ---
 
 [2024-12-18 0700 UTC]

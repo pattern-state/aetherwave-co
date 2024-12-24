@@ -1,21 +1,25 @@
 {{ define "main" }}
-<article class="log-entry">
-    <header>
-        <time>{{ .Date.Format "2024-12-18 1500 UTC" }}</time>
-        <h1>{{ .Title }}</h1>
-        {{ with .Params.location }}
-        <div class="location">{{ . }}</div>
-        {{ end }}
-    </header>
-
-    <div class="log-content">
-        {{ .Content }}
+<article class="article-single">
+    <div class="article-header">
+        <div class="content-container">
+            <div class="article-meta">
+                {{ with .Params.commander }}
+                <span class="author">{{ . }}</span>
+                {{ end }}
+                <span class="publish-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                <span class="read-time">{{ .ReadingTime }} min read</span>
+            </div>
+            <h1>{{ .Title }}</h1>
+            {{ with .Description }}
+            <h2 class="article-subtitle">{{ . }}</h2>
+            {{ end }}
+        </div>
     </div>
 
-    {{ with .Params._state }}
-    <footer class="-state">
-        <div class="coherence"> Coherence: {{ . }}</div>
-    </footer>
-    {{ end }}
+    <div class="article-body">
+        <div class="content-container">
+            {{ .Content }}
+        </div>
+    </div>
 </article>
 {{ end }}
