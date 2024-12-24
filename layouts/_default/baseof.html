@@ -10,7 +10,7 @@
 
     <!--  Theme -->
     {{ $sass := resources.Get "scss/main.scss" }}
-    {{ $style := $sass | resources.ExecuteAsTemplate "style.scss" . | css.Sass (dict "outputStyle" "compressed") }}
+    {{ $style := $sass | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     <!-- Math Rendering -->
