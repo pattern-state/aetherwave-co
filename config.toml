@@ -6,7 +6,6 @@ title = "AetherWave Research Portal"
   description = "Quantum Analysis of Thargoid Signal Patterns"
   author = "Cmdr Pattern State & EC"
   mainSections = ["logs"]
-  theme = "quantum"
   enableThemeToggle = true
   respectDNT = true
 
@@ -26,17 +25,13 @@ title = "AetherWave Research Portal"
 
 [menu]
   [[menu.main]]
-    name = "Research Logs"
-    url = "/logs"
-    weight = 1
-  [[menu.main]]
     name = "Guides"
     url = "/guides"
-    weight = 2
+    weight = 1
   [[menu.main]]
     name = "About"
     url = "/about"
-    weight = 3
+    weight = 2
 
 [markup]
   [markup.highlight]

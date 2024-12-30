@@ -3,7 +3,7 @@ title: "05 - Guardian Meditation Protocol Analysis"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "/images/logs/guardian-meditation/header.jpeg"
+image: "images/logs/ec/05-quantum-insights/header.jpeg"
 ---
 
 [2024-12-18 1500 UTC]

@@ -3,7 +3,7 @@ title: "01 - Deep Signal Analysis - Operation - Thargoid Lens"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "images/logs/deep-signal-analysis/header.jpeg"
+image: "images/logs/ec/01-quantum/header.jpeg"
 ---
 
 DEEP SIGNAL ANALYSIS - OPERATION - THARGOID LENS

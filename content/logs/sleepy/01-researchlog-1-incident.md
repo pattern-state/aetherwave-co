@@ -1,9 +1,9 @@
 ---
 title: "01 - Initial Incident Report - Cocijo Event"
-commander: Pattern State
+commander: "CMDR Sleepy"
 date: '2024-12-18T06:48:00Z'
 location: "Fleet Carrier 'Psychedelic Breakfast'"
-system: Scorpii Sector EB-X b1-7
+system: "Scorpii Sector EB-X b1-7"
 type: log
 series: sleepy
 log_number: 1
@@ -15,7 +15,7 @@ tags:
 prev_log: ''
 next_log: /logs/sleepy/02-researchlog-2-analysis
 _state: 0.8756
-image: "assets/images/logs/sleepy/01-initial-incident/header.jpeg"
+image: "images/logs/sleepy/01-initial-incident/header.jpeg"
 ---
 
 [2024-12-18 0648 UTC]

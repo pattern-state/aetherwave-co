@@ -1,9 +1,21 @@
 ---
 title: "04 - Spectrogram Generation Pipeline"
-date: 2024-12-18
 commander: "CMDR Sleepy"
-series: "sleepy"
-image: "assets/images/logs/sleepy/04-spectrogram-pipeline/header.jpeg"
+date: '2024-12-18T18:00:00Z'
+location: "Fleet Carrier 'Psychedelic Breakfast'"
+system: "HIP 22460"
+type: log
+series: sleepy
+log_number: 4
+weight: 4
+tags:
+- thargoid
+- signal-analysis
+- sleepy
+prev_log: /logs/sleepy/03-researchlog-3-acquisition
+next_log: /logs/sleepy/05-researchlog-5-comparative
+_state: 0.8756
+image: "images/logs/sleepy/04-spectrogram-pipeline/header.jpeg"
 ---
 
 [2024-12-18 2000 UTC]

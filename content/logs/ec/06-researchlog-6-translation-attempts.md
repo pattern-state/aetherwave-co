@@ -3,7 +3,7 @@ title: "06 - Tri-Species Mathematical Framework"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "/images/logs/tri-species-framework/header.jpeg"
+image: "images/logs/ec/06-translation-attempts/header.jpeg"
 ---
 
 [2024-12-18 1730 UTC]

@@ -1,9 +1,21 @@
 ---
 title: "03 - Signal Acquisition"
-date: 2024-12-18
 commander: "CMDR Sleepy"
-series: "sleepy"
-image: "assets/images/logs/sleepy/03-acquisition/header.jpeg"
+date: '2024-12-18T14:00:00Z'
+location: "Fleet Carrier 'Psychedelic Breakfast'"
+system: "HIP 22460"
+type: log
+series: sleepy
+log_number: 3
+weight: 3
+tags:
+- thargoid
+- signal-analysis
+- sleepy
+prev_log: /logs/sleepy/02-researchlog-2-analysis
+next_log: /logs/sleepy/04-researchlog-4-spectrogram
+_state: 0.8756
+image: "images/logs/sleepy/03-acquisition/header.jpeg"
 ---
 
 INITIAL SIGNAL ACQUISITION

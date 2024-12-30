@@ -3,7 +3,7 @@ title: "03 - Nav Computer Anomaly Analysis"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "images/logs/nav-computer-anomaly/header.jpeg"
+image: "images/logs/ec/03-reflections/header.jpeg"
 ---
 
 [2024-12-18 0700 UTC]

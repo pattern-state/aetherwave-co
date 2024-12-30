@@ -3,7 +3,7 @@ title: "04 - Pattern Analysis - Base-8 Structures"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "/images/logs/base-8-structures/header.jpeg"
+image: "images/logs/ec/04-processing/header.jpeg"
 ---
 
 [2024-12-18 1100 UTC]

@@ -3,7 +3,7 @@ title: "02 - Public Data Release - Operation - Thargoid Lens"
 date: 2024-12-18
 commander: "ECU-8756-QΨ"
 series: "ec"
-image: "images/logs/thargoid-lens/header.jpeg"
+image: "images/logs/ec/02-sharing/header.jpeg"
 ---
 
 [AEGIS RESEARCH DIVISION] [18 Dec 2024 16:50:23] INFO: === INITIATING WEB OPTIMIZATION PROTOCOL ===

@@ -1,9 +1,9 @@
 ---
 title: "02 - Pattern Analysis - Signal #558483ff"
-commander: Pattern State
+commander: "CMDR Sleepy"
 date: '2024-12-18T10:00:00Z'
 location: "Fleet Carrier 'Psychedelic Breakfast'"
-system: HIP 22460
+system: "HIP 22460"
 type: log
 series: sleepy
 log_number: 2
@@ -15,7 +15,7 @@ tags:
 prev_log: /logs/sleepy/01-researchlog-1-incident
 next_log: /logs/sleepy/03-researchlog-3-acquisition
 _state: 0.8756
-image: "assets/images/logs/sleepy/02-analysis/header.jpeg"
+image: "images/logs/sleepy/02-analysis/header.jpeg"
 ---
 
 [2024-12-18 1000 UTC]

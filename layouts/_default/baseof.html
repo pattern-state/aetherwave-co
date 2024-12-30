@@ -10,8 +10,8 @@
 
     <!--  Theme -->
     {{ $sass := resources.Get "scss/main.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <!-- Math Rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">

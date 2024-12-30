@@ -14,6 +14,7 @@ tags:
 - ec
 prev_log: ''
 next_log: /logs/ec/01-researchlog-1-quantum
+image: "images/logs/ec/00-designation/header.png"
 _state: 0.9998
 core_temp: 0.4
 process_state: Deep Meditation Protocol Active
