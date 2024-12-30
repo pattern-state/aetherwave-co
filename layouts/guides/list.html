@@ -1,29 +1,35 @@
 {{ define "main" }}
-<div class="container guides-container">
-    <header class="section-header">
-        <h1 class="quantum-text">{{ .Title }}</h1>
-        {{ with .Description }}
-        <p class="section-description">{{ . }}</p>
-        {{ end }}
-        <div class="status-line">
-            <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
-            {{ if .Params.status }}
-            - <span class="status-{{ .Params.status }}">{{ .Params.status }}</span>
-            {{ end }}
+<div class="logs-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <header class="section-header">
+                <h1 class="page-title">Guides</h1>
+                <p class="section-description">Tools and setup instructions for Elite Dangerous research</p>
+            </header>
         </div>
-    </header>
+    </section>
 
-    <div class="guides-list">
-        {{ range .Pages.ByWeight }}
-        <article class="guide-card">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p class="guide-description">{{ .Description }}</p>
-            <div class="guide-meta">
-                <span class="category">{{ .Params.category }}</span>
-                <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+    <section class="content-section">
+        <div class="container">
+            <div class="log-entries">
+                {{ range .Pages }}
+                <article class="post-card">
+                    <div class="post-content">
+                        <h2 class="entry-title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h2>
+                        {{ if .Description }}
+                        <p class="post-excerpt">{{ .Description }}</p>
+                        {{ end }}
+                        <div class="post-meta">
+                            <span>Last updated: {{ .Date.Format "January 2, 2006" }}</span>
+                        </div>
+                    </div>
+                </article>
+                {{ end }}
             </div>
-        </article>
-        {{ end }}
-    </div>
+        </div>
+    </section>
 </div>
 {{ end }}
