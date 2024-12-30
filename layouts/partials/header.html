@@ -1,3 +1,13 @@
 <header class="site-header">
-    {{ partial "nav.html" . }}
+    <div class="container">
+        <a href="/" class="site-title">AetherWave</a>
+        {{ partial "mobile-nav.html" . }}
+        <nav class="site-nav">
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
 </header>

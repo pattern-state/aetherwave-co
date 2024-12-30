@@ -44,6 +44,8 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+    {{ $nav := resources.Get "js/nav.js" | minify }}
+    <script src="{{ $nav.RelPermalink }}"></script>
 
     {{ if not .Site.Config.Services.GoogleAnalytics.ID }}
     <script data-goatcounter="https://aetherwave.goatcounter.com/count" async src="//gc.zgo.at/count.js">

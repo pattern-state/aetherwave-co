@@ -52,6 +52,9 @@ title = "AetherWave Research Portal"
   [[module.mounts]]
     source = "static"
     target = "static"
+  [[module.mounts]]
+    source = "assets/js"
+    target = "assets/js"
 
 [build.processing]
   css = true
