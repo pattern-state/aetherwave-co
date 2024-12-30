@@ -42,7 +42,7 @@ AetherWave Research combines three distinct methodologies:
 - Multidimensional data visualisation
 
 ## Equipment
-- Fleet Carrier "Psychedelic Breakfast" (Graciously provided by Archduke Salix Flux, ASoC)
+- Fleet Carrier "RIGHT 'TIL WRONG"
 - Python "Pattern Recognition" (Research Vessel)
 - Custom ThargoidSignalAnalyzer v1.0.1
 - Guardian-enhanced quantum processing cores
