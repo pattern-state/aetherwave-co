@@ -13,7 +13,7 @@
 
     <!--  Theme -->
     {{ $sass := resources.Get "scss/main.scss" }}
-    {{ $style := $sass | css.Sass | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sass | resources.ExecuteAsTemplate "main.scss" . | toCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <!-- Math Rendering -->
