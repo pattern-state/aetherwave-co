@@ -49,6 +49,9 @@ title = "AetherWave Research Portal"
   [[module.mounts]]
     source = "assets"
     target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
 
 [build.processing]
   css = true
