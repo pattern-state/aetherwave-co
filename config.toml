@@ -44,6 +44,9 @@ title = "AetherWave Research Portal"
 
 [module]
   [[module.mounts]]
+    source = "assets/fonts"
+    target = "static/fonts"
+  [[module.mounts]]
     source = "assets"
     target = "assets"
 

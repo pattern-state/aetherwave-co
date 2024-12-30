@@ -37,8 +37,6 @@
       "ul"
     ],
     "classes": [
-      "about-container",
-      "about-header",
       "active",
       "affiliations",
       "article-body",
@@ -104,7 +102,6 @@
       "posts-feed",
       "posts-grid",
       "prev-log",
-      "project-info",
       "prose",
       "publish-date",
       "quantum-state-display",
