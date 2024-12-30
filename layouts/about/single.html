@@ -5,52 +5,14 @@
         <div class="container">
             <header class="section-header">
                 <h1 class="quantum-text">{{ .Title }}</h1>
-                {{ partial "quantum-viz.html" . }}
-                <p class="section-description">{{ .Description }}</p>
+                <p class="section-description">{{ .Params.description | default "Understanding the quantum nature of Thargoid communications" }}</p>
             </header>
         </div>
     </section>
 
     <section class="content-section">
-        <div class="container">
-            <div class="researchers-grid">
-                {{ range .Site.Data.researchers.researchers }}
-                <section class="researcher-card">
-                    <header>
-                        <h2>{{ .title }} {{ .name }}</h2>
-                        <p class="role">{{ .role }}</p>
-                    </header>
-
-                    <div class="researcher-info">
-                        <p class="background">{{ .background }}</p>
-                        {{ with .affiliations }}
-                        <div class="affiliations">
-                            <h3>Affiliations</h3>
-                            <ul>
-                                {{ range . }}
-                                <li>{{ . }}</li>
-                                {{ end }}
-                            </ul>
-                        </div>
-                        {{ end }}
-
-                        <div class="current-status">
-                            <p><strong>Current Assignment:</strong> {{ .current_assignment }}</p>
-                            {{ with .ship }}
-                            <p><strong>Ship:</strong> {{ . }}</p>
-                            {{ end }}
-                            {{ with .home }}
-                            <p><strong>Home:</strong> {{ . }}</p>
-                            {{ end }}
-                        </div>
-                    </div>
-
-                    {{ partial "quantum-viz.html" . }}
-                </section>
-                {{ end }}
-            </div>
-
-            <div class="log-content prose">
+        <div class="content-container">
+            <div class="prose">
                 {{ .Content }}
             </div>
         </div>

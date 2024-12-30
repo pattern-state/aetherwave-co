@@ -5,8 +5,6 @@ type: about
 layout: single
 ---
 
-# AetherWave Research Portal
-
 ## Project Overview
 AetherWave Research is a collaborative initiative focused on decoding and analysing Thargoid signal patterns through the combined lens of human intuition, Guardian mathematics, and quantum computing. Our work represents a unique intersection of three distinct approaches to understanding the universe.
 

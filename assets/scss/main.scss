@@ -91,6 +91,7 @@
     padding: 2rem var(--side-padding);
 
     .section-header {
+        text-align: center;
         margin-bottom: 3rem;
 
         h1 {
@@ -483,5 +484,119 @@
             width: 100%;
             flex-wrap: wrap;
         }
+    }
+}
+
+// ======================
+// Guides Layout
+// ======================
+.post-card {
+    background: var(--primary-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-content {
+        .entry-title {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+
+            a {
+                color: var(--primary-text);
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: var(--accent);
+                }
+            }
+        }
+
+        .post-excerpt {
+            color: var(--secondary-text);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .post-meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--secondary-text);
+        }
+    }
+}
+
+// Add responsive styles
+@media screen and (max-width: 768px) {
+    .post-card {
+        &:hover {
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+// ======================
+// Prose Content
+// ======================
+.prose {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--primary-text);
+
+    h2 {
+        font-family: var(--font-mono);
+        font-size: 1.5rem;
+        margin: 2.5rem 0 1rem;
+    }
+
+    h3 {
+        font-family: var(--font-mono);
+        font-size: 1.25rem;
+        margin: 2rem 0 0.875rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    ul,
+    ol {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    blockquote {
+        border-left: 4px solid var(--accent);
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+        color: var(--secondary-text);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .prose {
+        font-size: 1rem;
     }
 }
