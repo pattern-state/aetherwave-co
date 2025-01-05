@@ -3,21 +3,41 @@
     <div class="header-section">
         <h1 class="page-title">Research Logs</h1>
 
-        <!-- Author Filter -->
-        <div class="author-filter">
-            <button class="filter-btn active" data-series="all">All Authors</button>
-            <button class="filter-btn" data-series="sleepy">CMDR Sleepy</button>
-            <button class="filter-btn" data-series="ec">ECU-8756-QΨ</button>
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <!-- Series Dropdown -->
+            <select class="series-select filter-control" aria-label="Filter by series">
+                <option value="all">All Series</option>
+                {{ $logPages := where .Site.Pages "Type" "logs" }}
+                {{ range $logPages.GroupByParam "series" }}
+                {{ if .Key }}
+                <option value="{{ .Key | urlize }}">{{ .Key }}</option>
+                {{ end }}
+                {{ end }}
+            </select>
+
+            <!-- Author Filter -->
+            <div class="author-filter">
+                <button class="filter-btn active" data-author="all">All Authors</button>
+                <div class="author-filter-grid">
+                    <button class="filter-btn" data-author="cmdr-pattern-state">Commander Pattern State</button>
+                    <button class="filter-btn" data-author="enhanced-cognition-unit-#ecu-8756-q%CF%88">Guardian AI #ECU-8756-QΨ</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="posts-grid">
-        {{ $logs := where .Site.RegularPages "Section" "logs" }}
-        {{ range $logs.ByDate.Reverse }}
-        <article class="post-card" data-series="{{ .Params.series }}">
+        {{ range where .Site.RegularPages "Section" "logs" }}
+        <article class="post-card" 
+                 data-series="{{ .Params.series | urlize }}"
+                 data-author="{{ .Params.commander | urlize }}">
             {{ if .Params.image }}
             <div class="post-image">
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                {{ $image := resources.Get .Params.image }}
+                {{ if $image }}
+                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+                {{ end }}
             </div>
             {{ else }}
             <div class="post-image placeholder">
@@ -26,15 +46,24 @@
             {{ end }}
 
             <div class="post-content">
+                <!-- Add log number -->
+                {{ with .Params.log_number }}
+                <div class="log-number">{{ printf "%02d" . }}</div>
+                {{ end }}
+                
                 <h2 class="post-title">
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h2>
-                <p class="post-excerpt">{{ .Description }}</p>
+                {{ with .Params.subheading }}
+                <div class="subheading">{{ . }}</div>
+                {{ end }}
+                
                 <div class="post-meta">
-                    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                    <span class="series-tag {{ .Params.series }}">
-                        {{ if eq .Params.series "ec" }}ECU-8756-QΨ{{ else }}CMDR Sleepy{{ end }}
+                    <span class="author {{ if eq .Params.commander "Enhanced Cognition Unit #ECU-8756-QΨ" }}author-ec{{ else }}author-human{{ end }}">
+                        {{ .Params.commander }}
                     </span>
+                    <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                    <span class="reading-time">{{ .ReadingTime }} min read</span>
                 </div>
             </div>
         </article>
@@ -42,27 +71,47 @@
     </div>
 </div>
 
-<!-- Filter JavaScript -->
+<!-- Updated Filter JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const posts = document.querySelectorAll('.post-card');
+document.addEventListener('DOMContentLoaded', function () {
+    const seriesSelect = document.querySelector('.series-select');
+    const authorBtns = document.querySelectorAll('.author-filter .filter-btn');
+    const posts = document.querySelectorAll('.post-card');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+    function updateVisibility() {
+        const selectedSeries = seriesSelect.value;
+        const selectedAuthor = document.querySelector('.author-filter .active').dataset.author;
 
-                const series = btn.dataset.series;
-                posts.forEach(post => {
-                    if (series === 'all' || post.dataset.series === series) {
-                        post.style.display = 'block';
-                    } else {
-                        post.style.display = 'none';
-                    }
-                });
-            });
+        posts.forEach(post => {
+            // Debug logging
+            console.log('Comparing:');
+            console.log('Selected author:', selectedAuthor);
+            console.log('Post author:', post.dataset.author);
+            
+            const matchesSeries = selectedSeries === 'all' || post.dataset.series === selectedSeries;
+            const matchesAuthor = selectedAuthor === 'all' || 
+                                 decodeURIComponent(post.dataset.author) === decodeURIComponent(selectedAuthor);
+            post.style.display = (matchesSeries && matchesAuthor) ? 'grid' : 'none';
+        });
+
+        const visiblePosts = document.querySelectorAll('.post-card[style="display: grid;"]');
+        if (visiblePosts.length === 0) {
+            console.log('No posts match the current filters');
+        }
+    }
+
+    seriesSelect.addEventListener('change', updateVisibility);
+
+    authorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            authorBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateVisibility();
         });
     });
+
+    // Initial visibility update
+    updateVisibility();
+});
 </script>
 {{ end }}

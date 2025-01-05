@@ -1,29 +1,46 @@
 {{ define "main" }}
-<div class="logs-container">
+<div class="guides-container">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <header class="section-header">
-                <h1 class="page-title">Guides</h1>
-                <p class="section-description">Tools and setup instructions for Elite Dangerous research</p>
+                <h1 class="quantum-text">Research Tools & Guides</h1>
+                <p class="section-description">Essential tools and protocols for Thargoid signal analysis</p>
             </header>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
-            <div class="log-entries">
-                {{ range .Pages }}
-                <article class="post-card">
-                    <div class="post-content">
+            <!-- Tool Filter -->
+            <div class="series-filter">
+                <button class="filter-btn active" data-tool="all">All Guides</button>
+                {{ $toolPages := where .Pages "Params.tool" "!=" nil }}
+                {{ range $toolPages.GroupByParam "tool" }}
+                {{ if .Key }}
+                <button class="filter-btn" data-tool="{{ .Key }}">
+                    {{ if eq .Key "edmc" }}EDMC
+                    {{ else if eq .Key "observatory" }}Observatory
+                    {{ else if eq .Key "materials-helper" }}Materials Helper
+                    {{ else }}{{ .Key | title }}{{ end }}
+                </button>
+                {{ end }}
+                {{ end }}
+            </div>
+
+            <div class="guide-entries">
+                {{ range .Pages.ByWeight }}
+                <article class="guide-card" data-tool="{{ .Params.tool }}">
+                    <div class="guide-content">
                         <h2 class="entry-title">
                             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </h2>
                         {{ if .Description }}
-                        <p class="post-excerpt">{{ .Description }}</p>
+                        <p class="guide-excerpt">{{ .Description }}</p>
                         {{ end }}
-                        <div class="post-meta">
-                            <span>Last updated: {{ .Date.Format "January 2, 2006" }}</span>
+                        <div class="guide-meta">
+                            <span class="tool">{{ .Params.tool_name }}</span>
+                            <span class="update-date">Updated: {{ .Date.Format "02 Jan 2006" }}</span>
                         </div>
                     </div>
                 </article>
@@ -32,4 +49,28 @@
         </div>
     </section>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const guideCards = document.querySelectorAll('.guide-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const selectedTool = btn.dataset.tool;
+            
+            guideCards.forEach(card => {
+                if (selectedTool === 'all' || card.dataset.tool === selectedTool) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
 {{ end }}

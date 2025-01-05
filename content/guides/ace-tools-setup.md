@@ -103,7 +103,7 @@ A crazy useful tool to track your materials, plan upgrades, and pinpoint the bes
    - Export your wishlist from EDSY into the app for better tracking.  
    - Share your loadouts and wishlists with other commanders to coordinate efforts.  
 
-> *CMDR SLEEPY's Note*: This makes the mat hunt and trading process a lot less complex and much easier to understand, particularly if you're new to the whole thing, as I was very recently.
+> *CMDR Pattern State's Note*: This makes the mat hunt and trading process a lot less complex and much easier to understand, particularly if you're new to the whole thing, as I was very recently.
 
 ---
 
@@ -118,7 +118,7 @@ A crazy useful tool to track your materials, plan upgrades, and pinpoint the bes
    - Visit [BioInsights](https://edjp.colacube.net/observatory) and download the plugin.  
    - If Observatory Core is already installed, double-click the downloaded file, and it will integrate with the Observatory app.  
    - This plugin predicts biological signals on planets from FSS scan data, helping you decide if a planet is worth exploring.  
-   - **Note**: CMDR SLEEPY hasn’t tested other plugins on this site. Your mileage may vary.
+   - **Note**: CMDR Pattern State hasn’t tested other plugins on this site. Your mileage may vary.
 
 ---
 

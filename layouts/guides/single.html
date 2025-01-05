@@ -12,8 +12,8 @@
     <footer class="guide-footer">
         <div class="guide-meta">
             <p>Last updated: {{ .Date.Format "January 2, 2006" }}</p>
-            {{ with .Params.category }}
-            <p>Category: {{ . }}</p>
+            {{ with .Params.tool_name }}
+            <p>Tool: {{ . }}</p>
             {{ end }}
         </div>
     </footer>

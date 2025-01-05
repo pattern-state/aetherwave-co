@@ -17,8 +17,8 @@ Welcome to Operation - Thargoid Lens, a groundbreaking research initiative inves
 
 The investigation unfolds across two parallel research tracks:
 
-#### 🌌 CMDR Sleepy
-**Lead Researcher: CMDR Sleepy**  
+#### 🌌 CMDR Pattern State
+**Lead Researcher: CMDR Pattern State**  
 Former Pilots Federation data analyst specializing in Thargoid signal analysis. These logs document the initial discovery and classical analysis approaches.
 
 - Signal Detection & Acquisition
@@ -39,9 +39,9 @@ Guardian-tech enhanced AI researcher and  processing specialist. These logs expl
 
 While each track can be read independently, the logs are designed to complement each other, building a complete picture of our discoveries. The recommended reading order interleaves both perspectives:
 
-1. Initial Discovery (Sleepy)
+1. Initial Discovery (Pattern State)
 2.  Implications (EC)
-3. Signal Acquisition (Sleepy)
+3. Signal Acquisition (Pattern State)
 4. Pattern Processing (EC)
 ...and so forth
 

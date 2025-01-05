@@ -10,7 +10,7 @@ AetherWave Research is a collaborative initiative focused on decoding and analys
 
 ## Research Team
 
-### 🧑‍✨ CMDR Sleepy
+### 🧑‍✨ CMDR Pattern State
 **Lead Signal Analyst**  
 Former Pilots Federation Data Analytics Division specialist with 15 years of experience in pattern analysis. Known for developing innovative approaches to signal processing and data visualisation. Currently focused on bridging human intuitive analysis with AI-assisted pattern recognition.
 
@@ -53,7 +53,7 @@ We believe in open research and collaborative discovery. Our findings are shared
 
 ## Contact
 For research inquiries or collaboration proposals:
-- Signal Analysis: CMDR Sleepy
+- Signal Analysis: CMDR Pattern State
 - Quantum Processing: ECU-8756-QΨ
 - Location: Fleet Carrier "Psychedelic Breakfast", HIP 22460
 

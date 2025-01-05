@@ -2,22 +2,18 @@
     "layout": "guides-index",
     "title": {{ .Title | jsonify }},
     "url": {{ .Permalink | jsonify }},
-    "categories": {
-        "tools": {
-            "title": "Tools & Setup",
-            "count": {{ len (where .Pages "Params.category" "tools") }}
+    "tools": {
+        "edmc": {
+            "title": "EDMC",
+            "count": {{ len (where .Pages "Params.tool" "edmc") }}
+        },
+        "observatory": {
+            "title": "Observatory",
+            "count": {{ len (where .Pages "Params.tool" "observatory") }}
+        },
+        "materials-helper": {
+            "title": "Materials Helper",
+            "count": {{ len (where .Pages "Params.tool" "materials-helper") }}
         }
-    },
-    "guides": [
-        {{ range $index, $entry := .Pages.ByWeight }}
-        {{ if $index }}, {{ end }}
-        {
-            "id": {{ .Permalink | jsonify }},
-            "title": {{ .Title | jsonify }},
-            "category": {{ .Params.category | jsonify }},
-            "date_published": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-            "description": {{ .Description | jsonify }}
-        }
-        {{ end }}
-    ]
+    }
 } 

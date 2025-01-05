@@ -8,12 +8,12 @@
             "count": {{ len (where .Pages "Params.series" "ec") }}
         },
         "sleepy": {
-            "title": "CMDR Sleepy",
+            "title": "CMDR Pattern State",
             "count": {{ len (where .Pages "Params.series" "sleepy") }}
         }
     },
     "logs": [
-        {{ range $index, $entry := .Pages.ByDate.Reverse }}
+        {{ range $index, $entry := .Pages.ByWeight.ByDate }}
         {{ if $index }}, {{ end }}
         {
             "id": {{ .Permalink | jsonify }},

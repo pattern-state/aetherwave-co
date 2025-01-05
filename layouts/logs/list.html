@@ -5,7 +5,7 @@
         <div class="container">
             <header class="section-header">
                 <h1 class="quantum-text">Research Logs</h1>
-                <p class="section-description">Documenting breakthroughs in Thargoid signal analysis</p>
+                <p class="section-description">Documenting breakthroughs in Thargoid signal patterns</p>
             </header>
         </div>
     </section>
@@ -14,49 +14,56 @@
         <div class="container">
             <!-- Series Filter -->
             <div class="series-filter">
-                <button class="filter-btn active" data-series="all">All Logs</button>
-                <button class="filter-btn" data-series="sleepy">CMDR Sleepy</button>
-                <button class="filter-btn" data-series="ec">ECU-8756-QΨ</button>
+                <button class="filter-btn active" data-series="all">All Series</button>
+                {{ $logPages := where .Pages "Type" "logs" }}
+                {{ range $logPages.GroupByParam "series" }}
+                <button class="filter-btn" data-series="{{ .Key }}">{{ .Key }}</button>
+                {{ end }}
             </div>
 
             <!-- Logs List -->
             <div class="logs-list">
-                {{ range .Pages.ByDate.Reverse }}
-                <article class="log-preview" data-series="{{ .Params.series }}">
-                    <div class="log-content">
-                        <div class="log-meta">
-                            {{ with .Params.commander }}
-                            <span class="commander">CMDR {{ . }}</span>
-                            {{ end }}
-                            <span class="series-tag {{ .Params.series }}">
-                                {{ if eq .Params.series "ec" }}ECU-8756-QΨ{{ else }}CMDR Sleepy{{ end }}
-                            </span>
+                {{ $logPages := where .Pages "Type" "logs" }}
+                {{ range $logPages.GroupByParam "series" }}
+                <div class="series-section" data-series="{{ .Key }}">
+                    {{ range .Pages.ByWeight.ByDate }}
+                    <article class="log-preview">
+                        <div class="log-content">
+                            <div class="log-meta">
+                                {{ with .Params.commander }}
+                                <span class="commander">{{ . }}</span>
+                                {{ end }}
+                                <span class="series-tag {{ $.Params.series }}">
+                                    {{ .Params.commander }}
+                                </span>
+                            </div>
+
+                            <a href="{{ .RelPermalink }}" class="log-link">
+                                <h2 class="log-title">{{ .Title }}</h2>
+                                <p class="log-excerpt">{{ .Description }}</p>
+                            </a>
+
+                            <div class="log-info">
+                                <span class="log-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                                {{ with .Params.location }}<span class="log-location">{{ . }}</span>{{ end }}
+                                {{ with .Params.system }}<span class="log-system">{{ . }}</span>{{ end }}
+                                {{ with .Params.quantum_state }}
+                                <span class="quantum-state">QS: {{ . }}</span>
+                                {{ end }}
+                            </div>
                         </div>
 
-                        <a href="{{ .RelPermalink }}" class="log-link">
-                            <h2 class="log-title">{{ .Title }}</h2>
-                            <p class="log-excerpt">{{ .Description }}</p>
+                        {{ with .Params.image }}
+                        <a href="{{ $.RelPermalink }}" class="log-image">
+                            {{ $image := resources.Get . }}
+                            {{ if $image }}
+                            <img src="{{ $image.RelPermalink }}" alt="Log thumbnail" loading="lazy">
+                            {{ end }}
                         </a>
-
-                        <div class="log-info">
-                            <span class="log-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                            {{ with .Params.location }}<span class="log-location">{{ . }}</span>{{ end }}
-                            {{ with .Params.system }}<span class="log-system">{{ . }}</span>{{ end }}
-                            {{ with .Params.quantum_state }}
-                            <span class="quantum-state">QS: {{ . }}</span>
-                            {{ end }}
-                        </div>
-                    </div>
-
-                    {{ with .Params.image }}
-                    <a href="{{ $.RelPermalink }}" class="log-image">
-                        {{ $image := resources.Get . }}
-                        {{ if $image }}
-                        <img src="{{ $image.RelPermalink }}" alt="Log thumbnail" loading="lazy">
                         {{ end }}
-                    </a>
+                    </article>
                     {{ end }}
-                </article>
+                </div>
                 {{ end }}
             </div>
         </div>
@@ -67,21 +74,19 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const logs = document.querySelectorAll('.log-preview');
+        const seriesSections = document.querySelectorAll('.series-section');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active button
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Filter logs
                 const series = btn.dataset.series;
-                logs.forEach(log => {
-                    if (series === 'all' || log.dataset.series === series) {
-                        log.style.display = 'flex';
+                seriesSections.forEach(section => {
+                    if (series === 'all' || section.dataset.series === series) {
+                        section.style.display = 'block';
                     } else {
-                        log.style.display = 'none';
+                        section.style.display = 'none';
                     }
                 });
             });

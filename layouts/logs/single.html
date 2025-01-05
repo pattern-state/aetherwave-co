@@ -1,9 +1,19 @@
 {{ define "main" }}
 <article class="log-single">
+    <!-- Header Image -->
+    {{ with .Params.image }}
+    <div class="log-header-image">
+        {{ $image := resources.Get . }}
+        {{ with $image }}
+        <img src="{{ .RelPermalink }}" alt="Header image for {{ $.Title }}" loading="lazy">
+        {{ end }}
+    </div>
+    {{ end }}
+
     <!-- Timestamp Header -->
     <div class="timestamp-header">
         <div class="container">
-            <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
                 {{ .Date.Format "181530-1218-128 2300 UTC" }}
             </time>
         </div>
@@ -12,9 +22,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="quantum-text">{{ .Title }}</h1>
+            <!-- Large log number -->
+            <div class="log-number">{{ printf "%02d" .Params.log_number }}</div>
+            
+            <!-- Title and subheading -->
+            <div class="log-header">
+                <h1 class="quantum-text">{{ .Title }}</h1>
+                {{ with .Params.subheading }}
+                <div class="subheading">{{ . }}</div>
+                {{ end }}
+            </div>
+
+            <!-- Meta information -->
             <div class="log-meta">
-                <span class="location">{{ .Params.location }}</span>
+                <span class="author {{ if eq .Params.commander "Enhanced Cognition Unit #ECU-8756-QΨ" }}author-ec{{ else }}author-human{{ end }}">
+                    {{ .Params.commander }}
+                </span>
+                <span class="date">{{ .Date.Format "Jan 02, 2006" }}</span>
+                <span class="reading-time">{{ .ReadingTime }} min read</span>
             </div>
         </div>
     </section>

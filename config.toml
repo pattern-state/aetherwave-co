@@ -25,13 +25,17 @@ title = "AetherWave Research Portal"
 
 [menu]
   [[menu.main]]
-    name = "Guides"
-    url = "/guides"
+    name = "Logs"
+    url = "/"
     weight = 1
+  [[menu.main]]
+    name = "Guides"
+    url = "/guides/"
+    weight = 2
   [[menu.main]]
     name = "About"
     url = "/about"
-    weight = 2
+    weight = 3
 
 [markup]
   [markup.highlight]

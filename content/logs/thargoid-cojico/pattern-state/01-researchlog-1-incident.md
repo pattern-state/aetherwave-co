@@ -1,11 +1,12 @@
 ---
-title: "01 - Initial Incident Report - Cocijo Event"
-commander: "CMDR Sleepy"
+title: "Initial Incident Report"
+subheading: "Cocijo Event"
+commander: "CMDR Pattern State"
 date: '2024-12-18T06:48:00Z'
 location: "Fleet Carrier 'Psychedelic Breakfast'"
 system: "Scorpii Sector EB-X b1-7"
 type: log
-series: sleepy
+series: "thargoid-cojico"
 log_number: 1
 weight: 1
 tags:
@@ -13,16 +14,18 @@ tags:
 - signal-analysis
 - sleepy
 prev_log: ''
-next_log: /logs/sleepy/02-researchlog-2-analysis
+next_log: /logs/pattern-state-thargoid-cojico/02-researchlog-2-analysis
 _state: 0.8756
-image: "images/logs/sleepy/01-initial-incident/header.jpeg"
+image: "images/logs/pattern-state-thargoid-cojico/01-initial-incident/header.jpeg"
 ---
 
-[2024-12-18 0648 UTC]
-INITIAL INCIDENT REPORT
-----------------------
-Commander's Log: Cmdr Sleepy
-Location: Psychedelic Breakfast, Scorpii Sector EB-X b1-7
+## [2024-12-18 0648 UTC]
+# INITIAL INCIDENT REPORT
+
+> **Mission Status**  
+> **Location**: Fleet Carrier "Psychedelic Breakfast"  
+> **System**: Scorpii Sector EB-X b1-7  
+> **Commander**: CMDR Pattern State
 
 Woke to chaos this morning. Ironic, really - the nickname "Sleepy" came from my time in the Pilots Federation Data Analytics Division. Fifteen years of pattern analysis does that to you. "Even your subconscious thinks in algorithms," they'd say, finding me passed out at my desk after 36-hour data mining sessions, screens still scrolling with pilot behaviour patterns.
 
@@ -40,11 +43,11 @@ Initial community analysis is promising (Pattern #558483ff), but the source data
 
 Haven't had time to properly investigate why the carrier jumped. Too focused on these signals. The nav logs can wait - this is more important. Though I admit, part of me wonders if the carrier's nav computer spotted something in those patterns that we're still trying to understand. Wouldn't be the first time a machine noticed something while humans were sleeping.
 
-Equipment Note: Analysis performed aboard Fleet Carrier "Psychedelic Breakfast" using custom-built ThargoidSignalAnalyzer toolkit v1.0.0.
-
 ![Flight Log](../data/images/flight-logs.png)
 
-[End Log Entry]
+---
 
-*Equipment: ThargoidSignalAnalyzer toolkit v1.0.0*
+*Equipment: ThargoidSignalAnalyzer toolkit v1.0.0*  
 *Location: Fleet Carrier "Psychedelic Breakfast", Scorpii Sector EB-X b1-7*
+
+[End Log Entry]

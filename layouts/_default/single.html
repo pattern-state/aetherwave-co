@@ -1,14 +1,34 @@
 {{ define "main" }}
 <article class="article-single">
+    <!-- Header Image for logs -->
+    {{ if eq .Type "log" }}
+        {{ with .Params.image }}
+        <div class="article-header-image">
+            {{ $image := resources.Get . }}
+            {{ with $image }}
+            <img src="{{ .RelPermalink }}" 
+                 alt="Header image for {{ $.Title }}" 
+                 loading="lazy">
+            {{ end }}
+        </div>
+        {{ end }}
+    {{ end }}
+
     <div class="article-header">
         <div class="content-container">
             <div class="article-meta">
                 {{ with .Params.commander }}
-                <span class="author">{{ . }}</span>
+                <span class="author {{ if eq . "Enhanced Cognition Unit #ECU-8756-QΨ" }}author-ec{{ else }}author-human{{ end }}">
+                    {{ . }}
+                </span>
                 {{ end }}
-                <span class="publish-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
                 <span class="read-time">{{ .ReadingTime }} min read</span>
             </div>
+            
+            {{ with .Params.log_number }}
+            <div class="log-number">{{ printf "%02d" . }}</div>
+            {{ end }}
             <h1>{{ .Title }}</h1>
             {{ with .Description }}
             <h2 class="article-subtitle">{{ . }}</h2>
@@ -17,7 +37,7 @@
     </div>
 
     <div class="article-body">
-        <div class="content-container">
+        <div class="content-container prose">
             {{ .Content }}
         </div>
     </div>
