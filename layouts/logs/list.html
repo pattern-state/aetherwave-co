@@ -16,8 +16,14 @@
             <div class="series-filter">
                 <button class="filter-btn active" data-series="all">All Series</button>
                 {{ $logPages := where .Pages "Type" "logs" }}
-                {{ range $logPages.GroupByParam "series" }}
-                <button class="filter-btn" data-series="{{ .Key }}">{{ .Key }}</button>
+                {{ $series := slice }}
+                {{ range $logPages }}
+                    {{ with .Params.series }}
+                        {{ $series = $series | append . }}
+                    {{ end }}
+                {{ end }}
+                {{ range uniq $series }}
+                    <button class="filter-btn" data-series="{{ . }}">{{ . }}</button>
                 {{ end }}
             </div>
 

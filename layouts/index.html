@@ -8,7 +8,7 @@
             <!-- Series Dropdown -->
             <select class="series-select filter-control" aria-label="Filter by series">
                 <option value="all">All Series</option>
-                {{ $logPages := where .Site.Pages "Type" "logs" }}
+                {{ $logPages := where .Site.RegularPages "Section" "logs" }}
                 {{ range $logPages.GroupByParam "series" }}
                 {{ if .Key }}
                 <option value="{{ .Key | urlize }}">{{ .Key }}</option>
@@ -28,10 +28,11 @@
     </div>
 
     <div class="posts-grid">
-        {{ range where .Site.RegularPages "Section" "logs" }}
+        {{ $logPages := where .Site.RegularPages "Section" "logs" }}
+        {{ range $logPages }}
         <article class="post-card" 
-                 data-series="{{ .Params.series | urlize }}"
-                 data-author="{{ .Params.commander | urlize }}">
+                 data-series="{{ with .Params.series }}{{ . | urlize }}{{ end }}"
+                 data-author="{{ with .Params.commander }}{{ . | urlize }}{{ end }}">
             {{ if .Params.image }}
             <div class="post-image">
                 {{ $image := resources.Get .Params.image }}
