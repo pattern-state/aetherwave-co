@@ -63,6 +63,11 @@ title = "AetherWave Research Portal"
 [build.processing]
   css = true
   js = true
+
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"
+  anchor = "Smart"
   
 [security.funcs]
   getenv = ['^HUGO_']

@@ -9,10 +9,14 @@
             <select class="series-select filter-control" aria-label="Filter by series">
                 <option value="all">All Series</option>
                 {{ $logPages := where .Site.RegularPages "Section" "logs" }}
-                {{ range $logPages.GroupByParam "series" }}
-                {{ if .Key }}
-                <option value="{{ .Key | urlize }}">{{ .Key }}</option>
+                {{ $series := slice }}
+                {{ range $logPages }}
+                    {{ with .Params.series }}
+                        {{ $series = $series | append . }}
+                    {{ end }}
                 {{ end }}
+                {{ range uniq $series }}
+                    <option value="{{ . | urlize }}">{{ . }}</option>
                 {{ end }}
             </select>
 
@@ -47,7 +51,6 @@
             {{ end }}
 
             <div class="post-content">
-                <!-- Add log number -->
                 {{ with .Params.log_number }}
                 <div class="log-number">{{ printf "%02d" . }}</div>
                 {{ end }}

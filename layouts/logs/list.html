@@ -30,9 +30,15 @@
             <!-- Logs List -->
             <div class="logs-list">
                 {{ $logPages := where .Pages "Type" "logs" }}
-                {{ range $logPages.GroupByParam "series" }}
-                <div class="series-section" data-series="{{ .Key }}">
-                    {{ range .Pages.ByWeight.ByDate }}
+                {{ $series := slice }}
+                {{ range $logPages }}
+                    {{ with .Params.series }}
+                        {{ $series = $series | append . }}
+                    {{ end }}
+                {{ end }}
+                {{ range $currentSeries := uniq $series }}
+                <div class="series-section" data-series="{{ $currentSeries }}">
+                    {{ range (where $logPages "Params.series" $currentSeries).ByWeight.ByDate }}
                     <article class="log-preview">
                         <div class="log-content">
                             <div class="log-meta">
