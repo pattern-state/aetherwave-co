@@ -57,7 +57,6 @@ A crazy useful tool to track your materials, plan upgrades, and pinpoint the bes
 
 5. **Explore EDMC Settings**:  
    EDMC offers several integrations in its settings. You can connect the following services for even more functionality:
-   - **EDDN**: Shares anonymised market, system, and scan data with tools like EDDB.
    - **EDSM**: Tracks your flight logs and system data.  
    - **Inara**: Syncs your commander’s activities, ship details, and more.  
    - **BGS Tally**: Integrates seamlessly as a plugin.

@@ -40,6 +40,5 @@ As we traverse the vastness of the galaxy, delving into exploration, combat, and
 
 ## Available Services
 EDMC offers several integrations in its settings:
-- **EDDN**: Shares anonymised market, system, and scan data with tools like EDDB
 - **EDSM**: Tracks your flight logs and system data  
 - **Inara**: Syncs your commander's activities, ship details, and more

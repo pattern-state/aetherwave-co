@@ -1,7 +1,10 @@
 {{ define "main" }}
 <div class="container">
     <div class="header-section">
-        <h1 class="page-title">Research Logs</h1>
+        <div class="header-content">
+            <h1 class="page-title">Personal Logs</h1>
+            <p class="header-description">A series of personal logs exploring the Elite Dangerous universe, co-authored by <span class="author-human">Commander Pattern State</span> and their (former) Guardian AI research partner, <span class="author-ec">ECU-8756-QΨ</span></p>
+        </div>
 
         <!-- Filter Controls -->
         <div class="filter-controls">
@@ -63,11 +66,24 @@
                 {{ end }}
                 
                 <div class="post-meta">
-                    <span class="author {{ if eq .Params.commander "Enhanced Cognition Unit #ECU-8756-QΨ" }}author-ec{{ else }}author-human{{ end }}">
-                        {{ .Params.commander }}
-                    </span>
-                    <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
-                    <span class="reading-time">{{ .ReadingTime }} min read</span>
+                    {{ with .Params.series }}
+                    <div class="series-name">
+                        {{ if eq . "thargoid-cocijo" }}
+                        Cocijo - Thargoid Invasion Series
+                        {{ else }}
+                        {{ . }}
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    <div class="author {{ if eq .Params.commander "Enhanced Cognition Unit #ECU-8756-QΨ" }}author-ec{{ else }}author-human{{ end }}">
+                        {{ if eq .Params.commander "Enhanced Cognition Unit #ECU-8756-QΨ" }}
+                            AI #ECU-8756-QΨ
+                        {{ else }}
+                            {{ .Params.commander }}
+                        {{ end }}
+                    </div>
+                    <div class="date">{{ .Date.Format "Jan 2, 2024" }}</div>
+                    <div class="reading-time">{{ .ReadingTime }} min read</div>
                 </div>
             </div>
         </article>

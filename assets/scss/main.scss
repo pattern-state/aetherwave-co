@@ -10,6 +10,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
 // ======================
 // Variables & Base Reset
 // ======================
@@ -24,7 +40,7 @@
     --content-width: 680px;
     --side-padding: 2rem;
     --font-mono: 'JetBrains Mono', monospace;
-    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --header-height: 4rem;
 }
 
@@ -128,6 +144,7 @@
         font-size: 1.25rem;
         font-weight: 500;
         transition: color 0.2s ease;
+        margin-left: 10px;
 
         &:hover {
             color: var(--accent);
@@ -617,7 +634,10 @@
     justify-content: space-between;
     align-items: center;
     margin: 3rem 0;
-    padding: 0 var(--side-padding);
+    padding: 2rem var(--side-padding);
+    background: var(--primary-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
 
     .page-title {
         font-family: var(--font-mono);
@@ -683,6 +703,29 @@
             }
         }
     }
+
+    .header-content {
+        margin-right: 2rem;
+    }
+
+    .header-description {
+        font-family: 'Montserrat';
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--secondary-text);
+        margin-top: 0.5rem;
+        max-width: 600px;
+
+        .author-human {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .author-ec {
+            color: #2a9d8f;
+            font-weight: 600;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -742,6 +785,14 @@
             font-family: var(--font-mono);
             font-size: 0.75rem;
             color: var(--secondary-text);
+
+            .series-name {
+                font-family: var(--font-mono);
+                color: var(--accent);
+                font-size: 0.75rem;
+                margin-bottom: 0.25rem;
+                opacity: 0.8;
+            }
         }
 
         .log-number {
@@ -1028,7 +1079,7 @@
             }
 
             .author-ec {
-                color: #2a9d8f; // Different shade of green for EC
+                color: #2a9d8f;
             }
 
             .date {
