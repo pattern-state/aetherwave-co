@@ -22,11 +22,6 @@ description: "Comprehensive reference tables for Elite Dangerous System Colonisa
 - [Hauling Tips & Tricks](/guides/colonisation-tips/)
 - **[Reference Tables](/guides/colonisation-reference/)** (You are here)
 
-**Greetings, Commander!**
-
-I'm Commander Pattern State, and I've put together this guide to help fellow commanders across the galaxy.
-
-As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
 
 *Data sourced from DaftMav's Colonization Construction Details*
 

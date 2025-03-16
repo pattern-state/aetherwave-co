@@ -22,12 +22,6 @@ description: "Essential setup guide for Elite Dangerous System Colonisation"
 - [Hauling Tips & Tricks](/guides/colonisation-tips/)
 - [Reference Tables](/guides/colonisation-reference/)
 
-**Greetings, Commander!**
-
-I'm Commander Pattern State, and I've put together this guide to help fellow commanders across the galaxy.
-
-As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
-
 ## Introduction
 
 The Trailblazers update (February 2025) introduced one of the most significant additions to Elite Dangerous: System Colonisation. For the first time, commanders can claim unoccupied systems, build stations, and establish new hubs of civilisation throughout the galaxy. The Bubble is no longer static - it's now expanding through player-led, free-form development.

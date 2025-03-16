@@ -11,8 +11,6 @@ description: "Complete setup guide for essential A.C.E. Squadron exploration and
 
 **Greetings, Commander!**
 
-Welcome, brave members of the A.C.E. Exploration Squadron!  
-
 As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
 
 This guide will help you install, configure, and get the most out of the essential software that powers our squadron’s efforts, ensuring your journey is as seamless as it is rewarding.

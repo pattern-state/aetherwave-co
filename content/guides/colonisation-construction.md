@@ -22,12 +22,6 @@ description: "Guide to the construction process in Elite Dangerous System Coloni
 - [Hauling Tips & Tricks](/guides/colonisation-tips/)
 - [Reference Tables](/guides/colonisation-reference/)
 
-**Greetings, Commander!**
-
-I'm Commander Pattern State, and I've put together this guide to help fellow commanders across the galaxy.
-
-As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
-
 ## System Colonisation Ship (SCS)
 
 After selecting your system, the System Colonisation Ship becomes your hub for construction operations. This is where you'll deliver the required commodities for your primary starport and subsequent installations.

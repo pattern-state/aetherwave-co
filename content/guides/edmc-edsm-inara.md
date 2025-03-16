@@ -13,12 +13,6 @@ description: "Guide for connecting EDMC with EDSM and Inara services"
 
 # EDMC: EDSM and Inara Integration
 
-**Greetings, Commander!**
-
-Welcome, brave members of the A.C.E. Exploration Squadron!  
-
-As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
-
 ## Connect EDSM and Inara to EDMC
 
 1. **Sign Up for EDSM**:  

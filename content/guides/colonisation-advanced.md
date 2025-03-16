@@ -24,10 +24,6 @@ description: "Advanced strategies and mechanics for Elite Dangerous System Colon
 
 **Greetings, Commander!**
 
-I'm Commander Pattern State, and I've put together this guide to help fellow commanders across the galaxy.
-
-As we traverse the vastness of the galaxy, delving into exploration, combat, and the intricacies of the Background Simulation (BGS), having the right tools at your disposal can make all the difference. Whether you're charting unclaimed systems, defending humanity, or shaping the political landscape, these tools will ensure you're always one step ahead.
-
 ## Installation Prerequisites and Dependencies
 
 Many installations in the colonisation system have specific prerequisites that aren't explicitly stated in-game. Understanding these dependencies is crucial for efficient planning:
