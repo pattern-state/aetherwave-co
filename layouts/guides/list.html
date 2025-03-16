@@ -15,7 +15,8 @@
             <!-- Tool Filter -->
             <div class="series-filter">
                 <button class="filter-btn active" data-tool="all">All Guides</button>
-                {{ $toolPages := where .Pages "Params.tool" "!=" nil }}
+                {{ $allGuides := where .Site.Pages "Section" "guides" }}
+                {{ $toolPages := where $allGuides "Params.tool" "!=" nil }}
                 {{ range $toolPages.GroupByParam "tool" }}
                 {{ if .Key }}
                 <button class="filter-btn" data-tool="{{ .Key }}">
@@ -29,7 +30,9 @@
             </div>
 
             <div class="guide-entries">
-                {{ range .Pages.ByWeight }}
+                {{ $allGuides := where .Site.Pages "Section" "guides" }}
+                {{ range $allGuides }}
+                {{ if and (ne .Kind "section") (ne .Name "_index.md") }}
                 <article class="guide-card" data-tool="{{ .Params.tool }}">
                     <div class="guide-content">
                         <h2 class="entry-title">
@@ -45,6 +48,7 @@
                     </div>
                 </article>
                 {{ end }}
+                {{ end }}
             </div>
         </div>
     </section>
@@ -55,20 +59,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const guideCards = document.querySelectorAll('.guide-card');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+    // Check if there's a category in the URL path
+    const pathSegments = window.location.pathname.split('/');
+    const categoryInPath = pathSegments.length > 2 && pathSegments[1] === 'guides' && pathSegments[2] !== '';
+    
+    // Function to activate a filter button and apply filtering
+    function activateFilterBtn(toolValue) {
+        const btnToActivate = Array.from(filterBtns).find(btn => btn.dataset.tool === toolValue);
+        
+        if (btnToActivate) {
+            // Reset all buttons, then activate the matching one
             filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const selectedTool = btn.dataset.tool;
+            btnToActivate.classList.add('active');
             
+            // Apply filtering
             guideCards.forEach(card => {
-                if (selectedTool === 'all' || card.dataset.tool === selectedTool) {
+                if (toolValue === 'all' || card.dataset.tool === toolValue) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             });
+        }
+    }
+    
+    // If a category is in the URL path, activate that filter
+    if (categoryInPath) {
+        const categoryFromPath = pathSegments[2];
+        activateFilterBtn(categoryFromPath);
+    }
+
+    // Add click event listeners to all filter buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedTool = btn.dataset.tool;
+            
+            // Update URL to match the selected filter without reloading page
+            if (selectedTool === 'all') {
+                history.pushState({}, '', '/guides/');
+            } else {
+                history.pushState({}, '', `/guides/${selectedTool}/`);
+            }
+            
+            // Activate the button and apply filtering
+            activateFilterBtn(selectedTool);
         });
     });
 });

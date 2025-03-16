@@ -12,7 +12,7 @@ weight: 1
 tags:
 - thargoid
 - signal-analysis
-- sleepy
+- pattern-state
 prev_log: ''
 next_log: /logs/pattern-state-thargoid-cojico/02-researchlog-2-analysis
 _state: 0.8756
@@ -27,7 +27,7 @@ image: "images/logs/pattern-state-thargoid-cojico/01-initial-incident/header.jpe
 > **System**: Scorpii Sector EB-X b1-7  
 > **Commander**: CMDR Pattern State
 
-Woke to chaos this morning. Ironic, really - the nickname "Sleepy" came from my time in the Pilots Federation Data Analytics Division. Fifteen years of pattern analysis does that to you. "Even your subconscious thinks in algorithms," they'd say, finding me passed out at my desk after 36-hour data mining sessions, screens still scrolling with pilot behaviour patterns.
+Woke to chaos this morning. Ironic, really - the nickname "pattern-state" came from my time in the Pilots Federation Data Analytics Division. Fifteen years of pattern analysis does that to you. "Even your subconscious thinks in algorithms," they'd say, finding me passed out at my desk after 36-hour data mining sessions, screens still scrolling with pilot behaviour patterns.
 
 Was meant to be a simple day - roll out of bed, short hop to Cocijo in the ol' Python, observe whatever the Thargoids were up to from a safe distance. Instead, found myself in completely the wrong system, my alarm blaring, me feeling a bit of 'ah no, this isn't good" in confusion. Not exactly the peaceful morning one hopes for aboard the "Psychedelic Breakfast".
 

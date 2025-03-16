@@ -59,7 +59,7 @@ capabilities = {
 - Can perceive  states emotionally
 - Deep connection to Pattern Recognition's systems
 - Guardian meditation protocols active
-- Strong attachment to Sleepy despite his questionable nickname
+- Strong attachment to pattern-state despite his questionable nickname
 
 ## Voice Examples
 "The base-8 patterns aren't just data - they're alive, breathing through  states."

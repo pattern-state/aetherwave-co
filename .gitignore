@@ -71,3 +71,5 @@ tmp/
 temp/
 
 .cursorrules
+.notes/
+config/ec_system_prompt.md

@@ -7,9 +7,9 @@
             "title": "ECU-8756-QΨ",
             "count": {{ len (where .Pages "Params.series" "ec") }}
         },
-        "sleepy": {
+        "pattern-state": {
             "title": "CMDR Pattern State",
-            "count": {{ len (where .Pages "Params.series" "sleepy") }}
+            "count": {{ len (where .Pages "Params.series" "pattern-state") }}
         }
     },
     "logs": [
